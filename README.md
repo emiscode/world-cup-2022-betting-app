@@ -15,3 +15,4 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
     - run in dev mode: npm run start:dev
     - prisma interface: npx prisma studio
     - prisma migration: npx prisma migrate dev
+    - prisma erd generator: npx prisma generate
