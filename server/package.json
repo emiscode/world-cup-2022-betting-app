@@ -1,0 +1,17 @@
+{
+  "name": "world-cup-2022-betting-app-server",
+  "version": "1.0.0",
+  "description": "World Cup 2022 Betting App Server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiscode/world-cup-2022-betting-app"
+  },
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=8.19.2"
+  }
+}

@@ -1,1 +1,3 @@
-# Server - World Cup 2022 Betting App
+# World Cup 2022 Betting App
+
+## Server
