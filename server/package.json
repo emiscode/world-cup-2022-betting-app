@@ -2,9 +2,21 @@
   "name": "world-cup-2022-betting-app-server",
   "version": "1.0.0",
   "description": "World Cup 2022 Betting App Server",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "tsc && node build/index.js",
+    "start:dev": "ts-node-dev --respawn --watch src src/index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.8",
+    "prisma": "^4.5.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
   },
   "repository": {
     "type": "git",
