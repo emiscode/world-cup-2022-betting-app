@@ -27,7 +27,7 @@ async function bootstrap() {
     return { count };
   });
 
-  await fastify.listen({ port, host });
+  await fastify.listen({ port /* host */ });
 }
 
 bootstrap();
