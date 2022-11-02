@@ -7,7 +7,8 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
 - Project structure
 
   - server
-  - client
+  - client-web
+  - client-mobile
 
 - Available commands
   - server
@@ -16,5 +17,7 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
     - prisma interface: npx prisma studio
     - prisma migration: npx prisma migrate dev
     - prisma erd generator: npx prisma generate
-  - client
+  - client-web
     - npm run dev
+  - client-mobile
+    - npx expo start
