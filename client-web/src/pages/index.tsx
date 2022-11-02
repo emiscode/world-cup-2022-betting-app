@@ -1,19 +1,22 @@
 import * as dotenv from "dotenv";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface Pools {
   count: number;
 }
 
 export default function Home(props: Pools) {
+  const { t } = useTranslation("common");
+
   return (
     <div>
-      <h1>World Cup 2022 Betting App</h1>
+      <h1>{t("title")}</h1>
       <p>Pools: {props.count}</p>
     </div>
   );
 }
-
-export const getServerSideProps = async () => {
+export async function getServerSideProps({ locale }: any) {
   dotenv.config({ path: __dirname + "/.env" });
 
   const SERVER_HOST = process.env.SERVER_HOST || "localhost";
@@ -27,6 +30,7 @@ export const getServerSideProps = async () => {
   return {
     props: {
       count: data.count,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
-};
+}

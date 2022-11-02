@@ -24,5 +24,6 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
 - client-mobile
   - npx expo start
 
-**ERD**
+### **ERD**
+
 <img src="/server/prisma/ERD.svg" alt="ERD" title="Database" width=500>
