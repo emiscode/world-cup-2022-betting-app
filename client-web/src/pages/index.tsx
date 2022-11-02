@@ -1,18 +1,29 @@
 import * as dotenv from "dotenv";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { NextResponse } from "next/server";
+import { useState } from "react";
 
 interface Pools {
   count: number;
+  locale: string;
+  clientHost: string;
+  clientPort: string;
 }
 
 export default function Home(props: Pools) {
   const { t } = useTranslation("common");
+  const [lang, setLang] = useState(props.locale);
+  const URL = `http://${props.clientHost}:${props.clientPort}`;
 
   return (
     <div>
+      <a href={`${URL}/pt`}>{t("lang-pt")}</a> |{" "}
+      <a href={`${URL}/en`}>{t("lang-en")}</a>
       <h1>{t("title")}</h1>
-      <p>Pools: {props.count}</p>
+      <p>
+        {t("pools")}: {props.count}
+      </p>
     </div>
   );
 }
@@ -29,6 +40,9 @@ export async function getServerSideProps({ locale }: any) {
 
   return {
     props: {
+      locale,
+      clientHost: process.env.CLIENT_HOST || "localhost",
+      clientPort: process.env.CLIENT_PORT || "3000",
       count: data.count,
       ...(await serverSideTranslations(locale, ["common"])),
     },
