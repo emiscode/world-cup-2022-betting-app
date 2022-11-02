@@ -18,6 +18,7 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
   - prisma interface: npx prisma studio
   - prisma migration: npx prisma migrate dev
   - prisma erd generator: npx prisma generate
+  - prisma seed: npx prisma db seed
 - client-web
   - npm run dev
 - client-mobile

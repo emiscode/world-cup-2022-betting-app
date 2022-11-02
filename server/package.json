@@ -7,6 +7,9 @@
     "start": "tsc && node build/index.js",
     "start:dev": "ts-node-dev --respawn --watch src src/index.ts"
   },
+  "prisma": {
+    "seed": "ts-node-dev prisma/seed.ts --reset"
+  },
   "dependencies": {
     "@fastify/cors": "^8.1.1",
     "@prisma/client": "^4.5.0",
