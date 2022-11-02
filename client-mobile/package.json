@@ -1,0 +1,41 @@
+{
+  "name": "world-cup-2022-betting-app-client-mobile",
+  "version": "1.0.0",
+  "description": "World Cup 2022 Betting App Client Mobile",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.2",
+    "@types/react": "~18.0.0",
+    "@types/react-native": "~0.69.1",
+    "expo": "~46.0.16",
+    "expo-font": "~10.2.0",
+    "expo-status-bar": "~1.4.0",
+    "native-base": "^3.4.20",
+    "react": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-safe-area-context": "4.3.1",
+    "react-native-svg": "12.3.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "overrides": {
+    "react": "18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiscode/world-cup-2022-betting-app"
+  },
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=8.19.2"
+  },
+  "private": true
+}
