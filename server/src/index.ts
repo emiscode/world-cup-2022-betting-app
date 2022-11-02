@@ -1,7 +1,9 @@
 import * as dotenv from "dotenv";
-import Fastify from "fastify";
+import { z } from "zod";
+import Fastify, { FastifyRequest } from "fastify";
 import cors from "@fastify/cors";
 import { PrismaClient } from "@prisma/client";
+import ShortUniqueId from "short-unique-id";
 
 dotenv.config({ path: __dirname + "/.env" });
 
@@ -25,6 +27,24 @@ async function bootstrap() {
     const count = await prisma.pool.count();
 
     return { count };
+  });
+
+  fastify.post("/pools", async (req, res) => {
+    const poolRequest = z.object({
+      title: z.string(),
+    });
+
+    const { title } = poolRequest.parse(req.body);
+    const code = String(new ShortUniqueId({ length: 6 })()).toUpperCase();
+
+    await prisma.pool.create({
+      data: {
+        title,
+        code,
+      },
+    });
+
+    return res.status(201).send({ code });
   });
 
   await fastify.listen({ port /* host */ });
