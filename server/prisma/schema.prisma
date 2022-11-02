@@ -16,4 +16,51 @@ model Pool {
   title String 
   code String @unique
   createdAt DateTime @default(now())
+  ownerId String?
+
+  bettors Bettor[]
+  owner User? @relation(fields: [ownerId], references: [id])
 }
+
+model User {
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  avatarUrl String?
+  createdAt DateTime @default(now())
+
+  bettorAt Bettor[]
+  ownedPools Pool[]
+}
+
+model Match {
+  id String @id @default(cuid())
+  date DateTime
+  teamOneCountryCode String
+  teamTwoCountryCode String
+
+  bets Bet[]
+}
+
+model Bettor {
+  id String @id @default(cuid())
+  userId String
+  poolId String
+
+  bets Bet[]
+  user User @relation(fields: [userId], references: [id])
+  pool Pool @relation(fields: [poolId], references: [id])
+}
+
+model Bet {
+  id String @id @default(cuid())
+  teamOneScores Int
+  teamTwoScores Int
+  createdAt DateTime @default(now())
+  matchId String
+  bettorId String
+
+  match Match @relation(fields: [matchId], references: [id])
+  bettor Bettor @relation(fields: [bettorId], references: [id])
+}
+
