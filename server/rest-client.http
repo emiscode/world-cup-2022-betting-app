@@ -1,7 +1,13 @@
 const base
 
-### Pool Count
+### Pools Count
 http://localhost:5000/pools/count
+
+### Users Count
+http://localhost:5000/users/count
+
+### Bets Count
+http://localhost:5000/bets/count
 
 ### Create Pool
 POST http://localhost:5000/pools HTTP/1.1

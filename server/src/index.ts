@@ -29,6 +29,18 @@ async function bootstrap() {
     return { count };
   });
 
+  fastify.get("/users/count", async () => {
+    const count = await prisma.user.count();
+
+    return { count };
+  });
+
+  fastify.get("/bets/count", async () => {
+    const count = await prisma.bet.count();
+
+    return { count };
+  });
+
   fastify.post("/pools", async (req, res) => {
     const poolRequest = z.object({
       title: z.string(),
