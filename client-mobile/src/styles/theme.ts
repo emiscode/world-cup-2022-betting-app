@@ -1,31 +1,36 @@
-import { extendTheme } from 'native-base';
+import { extendTheme } from "native-base";
 
 export const THEME = extendTheme({
   colors: {
     gray: {
-      950: '#09090A',
-      900: '#121214',
-      800: '#202024',
-      600: '#323238',
-      300: '#8D8D99',
-      200: '#C4C4CC',
+      950: "#09090A",
+      900: "#121214",
+      800: "#202024",
+      600: "#323238",
+      300: "#8D8D99",
+      200: "#C4C4CC",
     },
     green: {
-      500: '#047C3F'
+      500: "#047C3F",
+      900: "#112110",
     },
     yellow: {
-      500: '#F7DD43',
-      600: '#BBA317',
+      500: "#F7DD43",
+      600: "#BBA317",
+    },
+    blue: {
+      500: "#242fdf",
+      600: "#0815ee",
     },
     red: {
-      500: '#DB4437',
+      500: "#DB4437",
     },
-    white: '#FFFFFF'
+    white: "#FFFFFF",
   },
   fonts: {
-    heading: 'Roboto_700Bold',
-    body: 'Roboto_400Regular',
-    medium: 'Roboto_500Medium'
+    heading: "Roboto_700Bold",
+    body: "Roboto_400Regular",
+    medium: "Roboto_500Medium",
   },
   fontSizes: {
     xs: 12,
@@ -35,6 +40,6 @@ export const THEME = extendTheme({
     xl: 24,
   },
   sizes: {
-    14: 56
-  }
+    14: 56,
+  },
 });
