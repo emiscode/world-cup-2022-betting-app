@@ -22,7 +22,7 @@ export default function Home(props: Pools) {
   const URL = `http://${props.clientHost}:${props.clientPort}`;
 
   return (
-    <div className="max-w-[1124px] h-screen mx-auto grid grid-cols-2 items-center">
+    <div className="max-w-[1124px] h-screen mx-auto grid grid-cols-2 gap-28 items-center">
       <main>
         <div className="space-y-8">
           <div className="flex space-x-4">
@@ -58,26 +58,36 @@ export default function Home(props: Pools) {
             jogando
           </strong>
         </div>
-        <form>
-          <input type="text" required placeholder="Qual o nome do seu bolão" />
-          <button type="submit">Criar meu bolão</button>
+        <form className="mt-10 flex gap-2">
+          <input
+            className="flex-1 px-6 py-4 rounded border border-gray-600 text-sm"
+            type="text"
+            required
+            placeholder="Qual o nome do seu bolão"
+          />
+          <button
+            className="bg-blue-500 px-6 py-4 rounded text-white uppercase font-bold text-sm hover:bg-blue-700 "
+            type="submit"
+          >
+            Criar meu bolão
+          </button>
         </form>
-        <p>
-          Após criar seu bolão, você receberá um código único que poderá usar
-          para convidar outras pessoas
+        <p className="mt-4 text-sm text-gray-300 leading-relaxed">
+          ⚽ Após criar seu bolão, você receberá um código único que poderá usar
+          para convidar outras pessoas.
         </p>
-        <div>
-          <div>
+        <div className="mt-10 pt-10 border-t border-gray-600 divide-x grid grid-cols-2 text-gray-100">
+          <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
-            <div>
-              <span>+2.000</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-2xl">+2.000</span>
               <span>Bolões criados</span>
             </div>
           </div>
-          <div>
+          <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
-            <div>
-              <span>+100.000</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-2xl">+100.000</span>
               <span>Palpites enviados</span>
             </div>
           </div>
