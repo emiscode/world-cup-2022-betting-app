@@ -24,7 +24,7 @@ export default function Home(props: Pools) {
   return (
     <div className="max-w-[1124px] h-screen mx-auto grid grid-cols-2 gap-28 items-center">
       <main>
-        <div className="space-y-8">
+        <div className="space-y-8 mt-8">
           <div className="flex space-x-4">
             <div>
               <a href={`${URL}/pt`}>
@@ -54,8 +54,7 @@ export default function Home(props: Pools) {
         <div className="mt-10 flex items-center gap-2">
           <Image src={usersAvatarImg} alt="" />
           <strong className="text-gray-100 text-xl">
-            <span className="text-green-500">+8.000</span> pessoas já estão
-            jogando
+            <span className="text-green-500">+8.000</span> {t("peoplePlaying")}
           </strong>
         </div>
         <form className="mt-10 flex gap-2">
@@ -63,25 +62,24 @@ export default function Home(props: Pools) {
             className="flex-1 px-6 py-4 rounded border border-gray-600 text-sm"
             type="text"
             required
-            placeholder="Qual o nome do seu bolão"
+            placeholder={t("poolName")}
           />
           <button
             className="bg-blue-500 px-6 py-4 rounded text-white uppercase font-bold text-sm hover:bg-blue-700 "
             type="submit"
           >
-            Criar meu bolão
+            {t("createPool")}
           </button>
         </form>
         <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-          ⚽ Após criar seu bolão, você receberá um código único que poderá usar
-          para convidar outras pessoas.
+          ⚽ {t("infoCreatePool")}
         </p>
-        <div className="mt-10 pt-10 border-t border-gray-600 flex items-center justify-between text-gray-100">
+        <div className="mt-10 pt-10 border-t border-gray-600 flex items-center justify-between text-gray-100 mb-8">
           <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
               <span className="font-bold text-2xl">+2.000</span>
-              <span>Bolões criados</span>
+              <span>{t("infoPoolsCreated")}</span>
             </div>
           </div>
           <div className="w-px h-14 bg-gray-600"></div>
@@ -89,11 +87,11 @@ export default function Home(props: Pools) {
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
               <span className="font-bold text-2xl">+100.000</span>
-              <span>Palpites enviados</span>
+              <span>{t("infoBetsMade")}</span>
             </div>
           </div>
         </div>
-        <p>
+        <p className="text-gray-100 mt-8 mb-8 hidden">
           {t("pools")}: {props.count}
         </p>
       </main>

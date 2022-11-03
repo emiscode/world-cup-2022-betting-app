@@ -2,6 +2,12 @@
   "title": "Bolão da Copa 2022",
   "subTitle": "Bolão da Copa do Mundo do Qatar 2022",
   "mainText": "Crie o seu bolão da Copa do Mundo e compartilhe com os amigos!",
+  "peoplePlaying": "pessoas já estão jogando",
+  "poolName": "Qual o nome do seu bolão",
+  "createPool": "Criar meu bolão",
+  "infoCreatePool": "Após criar seu bolão, você receberá um código que poderá usar para convidar outras pessoas.",
+  "infoPoolsCreated": "Bolões criados",
+  "infoBetsMade": "Palpites enviados",
   "pools": "Bolões",
   "lang-pt": "Português",
   "lang-en": "English"

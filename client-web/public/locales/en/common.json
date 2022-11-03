@@ -2,6 +2,12 @@
   "title": "World Cup 2022 Betting App",
   "subTitle": "World Cup Qatar 2022 Betting Pool",
   "mainText": "Create your own betting pool of the World Cup and share it with friends!",
+  "peoplePlaying": "people are playing",
+  "poolName": "Your betting pool name here",
+  "createPool": "Create pool",
+  "infoCreatePool": "After send the form, you will receive a code that you can use to invite other people to play.",
+  "infoPoolsCreated": "Betting pools created",
+  "infoBetsMade": "Bets made",
   "pools": "Pools",
   "lang-pt": "Português",
   "lang-en": "English"
