@@ -7,6 +7,8 @@ import appPreviewImg from "../assets/app-preview.png";
 import logoImg from "../assets/logo.svg";
 import usersAvatarImg from "../assets/users-avatar.png";
 import iconCheckImg from "../assets/icon-check.svg";
+import brazilFlagImg from "../assets/brazil-flag.png";
+import usaFlagImg from "../assets/usa-flag.png";
 
 interface Pools {
   count: number;
@@ -20,16 +22,40 @@ export default function Home(props: Pools) {
   const URL = `http://${props.clientHost}:${props.clientPort}`;
 
   return (
-    <div>
+    <div className="max-w-[1124px] h-screen mx-auto grid grid-cols-2 items-center">
       <main>
-        <a href={`${URL}/pt`}>{t("lang-pt")}</a> |{" "}
-        <a href={`${URL}/en`}>{t("lang-en")}</a>
-        <Image src={logoImg} alt="logo bet copa" />
-        <h1>{t("title")}</h1>
-        <div>
+        <div className="space-y-8">
+          <div className="flex space-x-4">
+            <div>
+              <a href={`${URL}/pt`}>
+                <Image className="w-5" src={brazilFlagImg} alt="" />
+              </a>
+            </div>
+            <div>
+              <a href={`${URL}/en`}>
+                <Image className="w-5" src={usaFlagImg} alt="" />
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <div>
+              <Image src={logoImg} alt="logo bet copa" />
+            </div>
+            <div>
+              <h2 className="text-gray-100 text-2xl">{t("subTitle")}</h2>
+            </div>
+            <div>
+              <h1 className="mt-14 text-white text-5xl font-bold leading-tight">
+                {t("mainText")}
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 flex items-center gap-2">
           <Image src={usersAvatarImg} alt="" />
-          <strong>
-            <span>+8.000</span> pessoas já estão jogando
+          <strong className="text-gray-100 text-xl">
+            <span className="text-green-500">+8.000</span> pessoas já estão
+            jogando
           </strong>
         </div>
         <form>

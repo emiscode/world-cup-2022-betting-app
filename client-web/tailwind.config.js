@@ -9,7 +9,12 @@ module.exports = {
 
       colors: {
         gray: {
+          100: "#FAFAD2",
           900: "#112110",
+        },
+
+        green: {
+          500: "#32CD32",
         },
       },
     },
