@@ -76,7 +76,7 @@ export default function Home(props: Pools) {
           ⚽ Após criar seu bolão, você receberá um código único que poderá usar
           para convidar outras pessoas.
         </p>
-        <div className="mt-10 pt-10 border-t border-gray-600 divide-x grid grid-cols-2 text-gray-100">
+        <div className="mt-10 pt-10 border-t border-gray-600 flex items-center justify-between text-gray-100">
           <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
@@ -84,6 +84,7 @@ export default function Home(props: Pools) {
               <span>Bolões criados</span>
             </div>
           </div>
+          <div className="w-px h-14 bg-gray-600"></div>
           <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
