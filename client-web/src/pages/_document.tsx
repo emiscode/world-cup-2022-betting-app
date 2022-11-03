@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-gray-900">
+      <body className="bg-gray-900 bg-effects bg-no-repeat bg-cover">
         <Main />
         <NextScript />
       </body>

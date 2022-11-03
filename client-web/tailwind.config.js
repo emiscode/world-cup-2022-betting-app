@@ -7,6 +7,10 @@ module.exports = {
         sans: "Roboto, sans-serif",
       },
 
+      backgroundImage: {
+        effects: "url(/bg-effects.png)",
+      },
+
       colors: {
         gray: {
           100: "#FAFAD2",
