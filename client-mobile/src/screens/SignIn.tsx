@@ -1,11 +1,17 @@
-import { Center, Text } from "native-base";
+import { Center, Icon } from "native-base";
+import { Fontisto } from "@expo/vector-icons";
+
+import Logo from "../assets/logo-green.svg";
+import { Button } from "../components/Button";
 
 export function SignIn() {
   return (
     <Center flex={1} bgColor="gray.900">
-      <Text color="white" fontSize={24} fontFamily="heading">
-        Sign in
-      </Text>
+      <Logo width={212} height={40} />
+      <Button
+        title="ENTRAR COM GOOGLE"
+        leftIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
+      />
     </Center>
   );
 }

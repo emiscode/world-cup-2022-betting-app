@@ -6,7 +6,7 @@
    fill="none"
    version="1.1"
    id="svg74"
-   sodipodi:docname="logo.svg"
+   sodipodi:docname="logo-white.svg"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -40,37 +40,37 @@
      d="M12.0111 20.6658V16.3291L0.0228271 20.785H0.00012207V25.2351H0.0228271L12.0111 29.691V25.3487L5.86369 22.9987L12.0111 20.6601V20.6658Z"
      fill="#F7DD43"
      id="path56"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <path
      fill-rule="evenodd"
      clip-rule="evenodd"
      d="M81.4487 29.4752V25.1386L87.5904 22.8056L81.4487 20.4727V16.136L93.4199 20.5919H93.4483V25.0477H93.4199L81.4487 29.4809V29.4752ZM76.306 10L69.2674 32.5972H73.4451L80.4837 10H76.306Z"
      fill="#F7DD43"
      id="path58"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <path
      d="M116.135 40.5478C111.855 40.5478 107.357 39.7367 103.832 37.7832V3.31672C107.302 1.41843 111.799 0.552096 116.135 0.552096C120.471 0.552096 124.862 1.36322 128.328 3.31672V16.541H119.601V7.54221C118.573 7.10904 117.324 6.94767 116.08 6.94767C114.836 6.94767 113.693 7.10904 112.61 7.54221V33.5577C113.638 33.9908 114.831 34.1522 116.08 34.1522C117.329 34.1522 118.518 33.9908 119.601 33.5577V24.5631H128.328V37.7874C124.913 39.6857 120.416 40.4968 116.135 40.552V40.5478Z"
      fill="#F7DD43"
      id="path66"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <path
      d="M144.695 40.5477C140.087 40.5477 135.645 39.571 132.12 37.5665V3.47803C135.59 1.52878 140.036 0.552032 144.695 0.552032C149.353 0.552032 153.689 1.47357 157.159 3.47803V37.5665C153.744 39.571 149.247 40.4925 144.695 40.5477ZM148.436 7.65256C147.408 7.2194 146.16 7.00281 144.644 7.00281C143.128 7.00281 141.934 7.2194 140.902 7.65256V33.3962C141.93 33.8846 143.179 34.1012 144.644 34.1012C146.109 34.1012 147.353 33.8846 148.436 33.3962V7.65256Z"
      fill="#F7DD43"
      id="path68"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <path
      d="M172.387 25.9135H170.056V40.0594H161.223V1.04043H172.387C177.7 1.04043 181.709 2.12335 184.852 4.34439V22.6096C181.764 24.7796 177.696 25.9135 172.387 25.9135ZM176.074 7.75876C175.262 7.16421 174.175 6.89242 172.332 6.89242H169.946V20.0615H172.332C174.12 20.0615 175.203 19.7897 176.074 19.2504V7.75876Z"
      fill="#F7DD43"
      id="path70"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <path
      d="M203.329 40.0593V25.9135H196.827V40.0593H188.049V3.42282C191.247 1.52453 195.744 0.552032 200.08 0.552032C204.416 0.552032 208.858 1.52878 212.056 3.42282V40.0593H203.329ZM203.329 7.32556C202.408 6.8924 201.269 6.67582 200.076 6.67582C198.883 6.67582 197.745 6.8924 196.823 7.32556V19.7345H203.325V7.32556H203.329Z"
      fill="#F7DD43"
      id="path72"
-     style="fill:#ffcc00" />
+     style="fill:#ffffff" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffcc00"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
      x="31.080791"
      y="35.82193"
      id="text532"><tspan
@@ -80,23 +80,23 @@
      aria-label="bet"
      transform="matrix(1.005424,0,0,0.99460527,2,0)"
      id="text547"
-     style="font-size:28.8409px;-inkscape-font-specification:sans-serif;fill:#ffcc00;stroke-width:0.721021">
+     style="font-size:28.8409px;-inkscape-font-specification:sans-serif;fill:#ffffff;stroke-width:0.721021">
     <path
        d="m 32.301342,21.771908 q 0,3.731854 -2.070123,6.083627 -2.056041,2.351773 -5.140102,2.351773 -1.323752,0 -2.323608,-0.28165 -0.999855,-0.281649 -1.901133,-0.816783 l -0.211237,0.788618 H 15.796686 V 7.9851686 h 5.06969 v 7.7453594 q 1.168845,-0.929443 2.379937,-1.506825 1.225175,-0.577381 2.816494,-0.577381 2.999567,0 4.619051,2.1687 1.619484,2.154619 1.619484,5.956886 z m -5.224597,0.09858 q 0,-2.112371 -0.718206,-3.253051 -0.718206,-1.14068 -2.563009,-1.14068 -0.718206,0 -1.47866,0.22532 -0.760453,0.211237 -1.450494,0.619628 v 7.942514 q 0.549216,0.197154 1.042103,0.267567 0.492886,0.07041 1.182927,0.07041 2.013793,0 2.999566,-1.182927 0.985773,-1.182928 0.985773,-3.548783 z"
-       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffcc00"
+       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
        id="path549" />
     <path
        d="M 51.537997,22.92667 H 39.934041 q 0.112659,1.858886 1.408247,2.844659 1.309669,0.985773 3.844514,0.985773 1.605402,0 3.112226,-0.577381 1.506825,-0.577381 2.379938,-1.239257 h 0.563299 v 4.069834 q -1.718062,0.690041 -3.238969,0.999855 -1.520906,0.309814 -3.36571,0.309814 -4.759875,0 -7.29472,-2.140535 -2.534845,-2.140536 -2.534845,-6.09771 0,-3.914927 2.39402,-6.196287 2.408103,-2.295443 6.590597,-2.295443 3.858597,0 5.801978,1.957464 1.943381,1.94338 1.943381,5.604823 z m -5.041525,-2.971401 q -0.04225,-1.591319 -0.788618,-2.39402 -0.746371,-0.802701 -2.323608,-0.802701 -1.464577,0 -2.408103,0.760453 -0.943525,0.760454 -1.056185,2.436268 z"
-       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffcc00"
+       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
        id="path551" />
     <path
        d="m 65.22616,29.756669 q -0.816783,0.211237 -1.732143,0.323896 -0.915361,0.126743 -2.239113,0.126743 -2.957319,0 -4.407814,-1.19701 -1.436412,-1.19701 -1.436412,-4.097999 v -7.393298 h -2.084205 v -3.436122 h 2.084205 V 9.5624054 h 5.06969 v 4.5204736 h 4.745792 v 3.436122 h -4.745792 v 5.604824 q 0,0.830866 0.01408,1.450494 0.01408,0.619629 0.22532,1.112516 0.197154,0.492886 0.690041,0.788618 0.506969,0.281649 1.464577,0.281649 0.394309,0 1.02802,-0.168989 0.647794,-0.16899 0.901278,-0.309815 h 0.422474 z"
-       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffcc00"
+       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
        id="path553" />
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffcc00"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
      x="43.372631"
      y="41"
      id="text573"><tspan
