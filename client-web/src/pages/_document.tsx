@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        <title>bet COPA</title>
       </Head>
       <body className="bg-gray-900 bg-effects bg-no-repeat bg-cover">
         <Main />
