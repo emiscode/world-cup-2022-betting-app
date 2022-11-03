@@ -9,9 +9,12 @@ import usersAvatarImg from "../assets/users-avatar.png";
 import iconCheckImg from "../assets/icon-check.svg";
 import brazilFlagImg from "../assets/brazil-flag.png";
 import usaFlagImg from "../assets/usa-flag.png";
+import api from "../lib/axios";
 
 interface Pools {
-  count: number;
+  poolsCount: number;
+  betsCount: number;
+  usersCount: number;
   locale: string;
   clientHost: string;
   clientPort: string;
@@ -54,7 +57,8 @@ export default function Home(props: Pools) {
         <div className="mt-10 flex items-center gap-2">
           <Image src={usersAvatarImg} alt="" />
           <strong className="text-gray-100 text-xl">
-            <span className="text-green-500">+8.000</span> {t("peoplePlaying")}
+            <span className="text-green-500">+{props.usersCount}</span>{" "}
+            {t("peoplePlaying")}
           </strong>
         </div>
         <form className="mt-10 flex gap-2">
@@ -78,7 +82,7 @@ export default function Home(props: Pools) {
           <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
-              <span className="font-bold text-2xl">+2.000</span>
+              <span className="font-bold text-2xl">+{props.poolsCount}</span>
               <span>{t("infoPoolsCreated")}</span>
             </div>
           </div>
@@ -86,13 +90,13 @@ export default function Home(props: Pools) {
           <div className="flex items-center gap-4">
             <Image src={iconCheckImg} alt="" />
             <div className="flex flex-col">
-              <span className="font-bold text-2xl">+100.000</span>
+              <span className="font-bold text-2xl">+{props.betsCount}</span>
               <span>{t("infoBetsMade")}</span>
             </div>
           </div>
         </div>
         <p className="text-gray-100 mt-8 mb-8 hidden">
-          {t("pools")}: {props.count}
+          {t("pools")}: {props.poolsCount}
         </p>
       </main>
       <Image src={appPreviewImg} alt="app preview" quality={100} />
@@ -104,18 +108,25 @@ export async function getServerSideProps({ locale }: any) {
 
   const SERVER_HOST = process.env.SERVER_HOST || "localhost";
   const SERVER_PORT = process.env.SERVER_PORT || "5000";
-  const POOLS_COUNT = "pools/count";
-  const URL = `http://${SERVER_HOST}:${SERVER_PORT}/${POOLS_COUNT}`;
+  const POOLS_COUNT_RESOURCE = "pools/count";
+  const BETS_COUNT_RESOURCE = "bets/count";
+  const USERS_COUNT_RESOURCE = "users/count";
 
-  const res = await fetch(URL);
-  const data = await res.json();
+  const [poolsCountResponse, betsCountResponse, usersCountResponse] =
+    await Promise.all([
+      api(SERVER_HOST, SERVER_PORT).get(POOLS_COUNT_RESOURCE),
+      api(SERVER_HOST, SERVER_PORT).get(BETS_COUNT_RESOURCE),
+      api(SERVER_HOST, SERVER_PORT).get(USERS_COUNT_RESOURCE),
+    ]);
 
   return {
     props: {
       locale,
       clientHost: process.env.CLIENT_HOST || "localhost",
       clientPort: process.env.CLIENT_PORT || "3000",
-      count: data.count,
+      poolsCount: poolsCountResponse.data.count,
+      betsCount: betsCountResponse.data.count,
+      usersCount: usersCountResponse.data.count,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
