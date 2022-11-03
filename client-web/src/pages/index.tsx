@@ -10,6 +10,7 @@ import iconCheckImg from "../assets/icon-check.svg";
 import brazilFlagImg from "../assets/brazil-flag.png";
 import usaFlagImg from "../assets/usa-flag.png";
 import api from "../lib/axios";
+import { FormEvent, useState } from "react";
 
 interface Pools {
   poolsCount: number;
@@ -18,9 +19,35 @@ interface Pools {
   locale: string;
   clientHost: string;
   clientPort: string;
+  serverHost: string;
+  serverPort: string;
 }
 
 export default function Home(props: Pools) {
+  const [poolTitle, setPoolTitle] = useState("");
+
+  const createPool = async (event: FormEvent) => {
+    const CREATE_POOL_RESOURCE = "pools";
+    event.preventDefault();
+
+    try {
+      const response = await api(props.serverHost, props.serverPort).post(
+        CREATE_POOL_RESOURCE,
+        {
+          title: poolTitle,
+        }
+      );
+
+      const { code } = response.data;
+      await navigator.clipboard.writeText(code);
+      alert(`${t("poolCode")}: ${code}`);
+      setPoolTitle("");
+    } catch (err) {
+      console.error(err);
+      alert(err);
+    }
+  };
+
   const { t } = useTranslation("common");
   const URL = `http://${props.clientHost}:${props.clientPort}`;
 
@@ -61,12 +88,14 @@ export default function Home(props: Pools) {
             {t("peoplePlaying")}
           </strong>
         </div>
-        <form className="mt-10 flex gap-2">
+        <form className="mt-10 flex gap-2" onSubmit={createPool}>
           <input
             className="flex-1 px-6 py-4 rounded border border-gray-600 text-sm"
             type="text"
             required
             placeholder={t("poolName")}
+            onChange={(event) => setPoolTitle(event.target.value)}
+            value={poolTitle}
           />
           <button
             className="bg-blue-500 px-6 py-4 rounded text-white uppercase font-bold text-sm hover:bg-blue-700 "
@@ -106,6 +135,8 @@ export default function Home(props: Pools) {
 export async function getServerSideProps({ locale }: any) {
   dotenv.config({ path: __dirname + "/.env" });
 
+  const CLIENT_HOST = process.env.CLIENT_HOST || "localhost";
+  const CLIENT_PORT = process.env.CLIENT_PORT || "3000";
   const SERVER_HOST = process.env.SERVER_HOST || "localhost";
   const SERVER_PORT = process.env.SERVER_PORT || "5000";
   const POOLS_COUNT_RESOURCE = "pools/count";
@@ -122,8 +153,10 @@ export async function getServerSideProps({ locale }: any) {
   return {
     props: {
       locale,
-      clientHost: process.env.CLIENT_HOST || "localhost",
-      clientPort: process.env.CLIENT_PORT || "3000",
+      clientHost: CLIENT_HOST,
+      clientPort: CLIENT_PORT,
+      serverHost: SERVER_HOST,
+      serverPort: SERVER_PORT,
       poolsCount: poolsCountResponse.data.count,
       betsCount: betsCountResponse.data.count,
       usersCount: usersCountResponse.data.count,

@@ -27,3 +27,9 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
 ### **ERD**
 
 <img src="/server/prisma/ERD.svg" alt="ERD" title="Database" width=500>
+
+### **Screenshots**
+
+<img src="/client-web/public/screenshot-pt.png">
+
+<img src="/client-web/public/screenshot-en.png">
