@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 import { useAuth } from "../hooks/useAuth";
 
 export function SignIn() {
-  const { signIn, user } = useAuth();
+  const { signIn, isUserLoading } = useAuth();
 
   return (
     <Center flex={1} bgColor="green.900" p={8}>
@@ -18,6 +18,8 @@ export function SignIn() {
         title="ENTRAR COM GOOGLE"
         leftIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
         onPress={signIn}
+        isLoading={isUserLoading}
+        _loading={{ _spinner: { color: "white" } }}
       />
       <Text color="white" marginTop={4}>
         Não utlizamos nenhuma informação além do seu e-mail para criação da sua
