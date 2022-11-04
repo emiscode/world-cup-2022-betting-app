@@ -1,6 +1,4 @@
 import { Button as ButtonNativeBase, Text, IButtonProps } from "native-base";
-import { YellowBox } from "react-native";
-
 interface Props extends IButtonProps {
   title: string;
   type?: "PRIMARY" | "SECONDARY";
