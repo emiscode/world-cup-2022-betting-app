@@ -9,8 +9,6 @@ import { useAuth } from "../hooks/useAuth";
 export function SignIn() {
   const { signIn, user } = useAuth();
 
-  console.log("Dados do usuário = ", user);
-
   return (
     <Center flex={1} bgColor="green.900" p={8}>
       <Logo width={212} height={40} />
