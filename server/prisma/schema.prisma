@@ -65,5 +65,7 @@ model Bet {
 
   match Match @relation(fields: [matchId], references: [id])
   bettor Bettor @relation(fields: [bettorId], references: [id])
+
+  @@unique([bettorId, matchId])
 }
 

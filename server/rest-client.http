@@ -43,3 +43,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRW1pbGlvI
 ### Find Pool by Id
 GET http://localhost:5000/pools/cla1b2qe2000ay7ll86bnzmtt/match HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRW1pbGlvIFNjb2RlbGVyIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUxtNXd1MmdJNk00LTlNcDgxckluM0syMlNMamMyel9mWlBVTi1VNXphd009czk2LWMiLCJzdWIiOiJjbGEydG02dTcwMDAweTc1bWhmaHJiN3VvIiwiaWF0IjoxNjY3NTg1OTQ1LCJleHAiOjE2Njc2NzIzNDV9.Yg9yIJ2yjNG4mSnzJAgd4wOmmll7AXvlhLwG_FVD-Pk
+
+### Create Bet
+POST http://localhost:5000/pools/cla2uvemd0001y7ycn7z42j16/match/cl9zt05mz0008y78yfrc5vjn7/bet HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRW1pbGlvIFNjb2RlbGVyIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUxtNXd1MmdJNk00LTlNcDgxckluM0syMlNMamMyel9mWlBVTi1VNXphd009czk2LWMiLCJzdWIiOiJjbGEydG02dTcwMDAweTc1bWhmaHJiN3VvIiwiaWF0IjoxNjY3NTg1OTQ1LCJleHAiOjE2Njc2NzIzNDV9.Yg9yIJ2yjNG4mSnzJAgd4wOmmll7AXvlhLwG_FVD-Pk
+content-type: application/json
+
+{
+    "teamOneScores": 2,
+    "teamTwoScores": 1
+}
