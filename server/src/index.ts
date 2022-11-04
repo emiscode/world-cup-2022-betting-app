@@ -1,18 +1,17 @@
 import * as dotenv from "dotenv";
-import { z } from "zod";
 import Fastify, { FastifyRequest } from "fastify";
 import cors from "@fastify/cors";
-import { PrismaClient } from "@prisma/client";
-import ShortUniqueId from "short-unique-id";
+import { poolRoutes } from "./routes/pool";
+import { userRoutes } from "./routes/user";
+import { matchRoutes } from "./routes/match";
+
+import { betRoutes } from "./routes/bet";
+import { authRoutes } from "./routes/auth";
 
 dotenv.config({ path: __dirname + "/.env" });
 
 const port = Number(process.env.PORT) || 3333;
 const host = String(process.env.HOST) || "0.0.0.0";
-
-const prisma = new PrismaClient({
-  log: ["query"],
-});
 
 async function bootstrap() {
   const fastify = Fastify({
@@ -23,41 +22,11 @@ async function bootstrap() {
     origin: true,
   });
 
-  fastify.get("/pools/count", async () => {
-    const count = await prisma.pool.count();
-
-    return { count };
-  });
-
-  fastify.get("/users/count", async () => {
-    const count = await prisma.user.count();
-
-    return { count };
-  });
-
-  fastify.get("/bets/count", async () => {
-    const count = await prisma.bet.count();
-
-    return { count };
-  });
-
-  fastify.post("/pools", async (req, res) => {
-    const poolRequest = z.object({
-      title: z.string(),
-    });
-
-    const { title } = poolRequest.parse(req.body);
-    const code = String(new ShortUniqueId({ length: 6 })()).toUpperCase();
-
-    await prisma.pool.create({
-      data: {
-        title,
-        code,
-      },
-    });
-
-    return res.status(201).send({ code });
-  });
+  await fastify.register(poolRoutes);
+  await fastify.register(userRoutes);
+  await fastify.register(matchRoutes);
+  await fastify.register(betRoutes);
+  await fastify.register(authRoutes);
 
   await fastify.listen({ port /* host */ });
 }
