@@ -19,7 +19,7 @@ export function New() {
           my={8}
           textAlign="center"
         >
-          Crie o seu bolão da Copa do Mundo e compartilhe com os amigos!
+          Crie o seu bolão da Copa do Mundo {"\n"} e compartilhe com os amigos!
         </Heading>
 
         <Input mb={2} placeholder="Qual nome do seu bolão" />
