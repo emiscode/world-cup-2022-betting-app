@@ -1,6 +1,6 @@
 import { THEME } from "./src/styles/theme";
 import { NativeBaseProvider, StatusBar } from "native-base";
-import { Find } from "./src/screens/Find";
+import { Pools } from "./src/screens/Pools";
 import { Loading } from "./src/components/Loading";
 import { AuthContextProvider } from "./src/contexts/AuthContext";
 
@@ -27,7 +27,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded ? <Find /> : <Loading />}
+        {fontsLoaded ? <Pools /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
