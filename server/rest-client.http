@@ -14,3 +14,11 @@ content-type: application/json
 {
     "title": "Segundo Bolão"
 }
+
+### SignIn
+POST http://localhost:5000/users HTTP/1.1
+content-type: application/json
+
+{
+    "access_token": "ya29.a0AeTM1icPqvXNklzoeTVWyCKvOv92VfoduQO8NMOcsxXVTaexJk7RhhuHAnF0Ro3QsZ3Cgq9Ks7p9xc6CDtlwX3u_H-fHD4_oNfnwdiTFVNIWfwHlSkwY553Z6JjGt0qf46jN4tUdoEcKnTY7Ny5RRrqGsJUERwaCgYKAYcSARISFQHWtWOmqdYO6qvhUyfmD4MKm0Vo_w0165"
+}
