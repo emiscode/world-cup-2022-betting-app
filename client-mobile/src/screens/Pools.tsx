@@ -9,7 +9,7 @@ export function Pools() {
 
   return (
     <VStack flex={1} bgColor="green.900">
-      <Header title="Meus bolões" showBackButton></Header>
+      <Header title="Meus bolões"></Header>
       <VStack
         mt={6}
         mx={5}

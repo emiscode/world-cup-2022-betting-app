@@ -33,7 +33,7 @@ async function bootstrap() {
   await fastify.register(betRoutes);
   await fastify.register(authRoutes);
 
-  await fastify.listen({ port /* host */ });
+  await fastify.listen({ port, host });
 }
 
 bootstrap();
