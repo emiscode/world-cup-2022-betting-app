@@ -10,21 +10,39 @@ export async function poolRoutes(fastify: FastifyInstance) {
     return { count };
   });
 
-  fastify.post("/pools", async (req, res) => {
+  fastify.post("/pools", async (request, reply) => {
     const poolRequest = z.object({
       title: z.string(),
     });
 
-    const { title } = poolRequest.parse(req.body);
+    const { title } = poolRequest.parse(request.body);
     const code = String(new ShortUniqueId({ length: 6 })()).toUpperCase();
 
-    await prisma.pool.create({
-      data: {
-        title,
-        code,
-      },
-    });
+    try {
+      await request.jwtVerify();
 
-    return res.status(201).send({ code });
+      await prisma.pool.create({
+        data: {
+          title,
+          code,
+          ownerId: request.user.sub,
+
+          bettors: {
+            create: {
+              userId: request.user.sub,
+            },
+          },
+        },
+      });
+    } catch (error) {
+      await prisma.pool.create({
+        data: {
+          title,
+          code,
+        },
+      });
+    }
+
+    return reply.status(201).send({ code });
   });
 }
