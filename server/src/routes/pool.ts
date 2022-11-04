@@ -142,4 +142,45 @@ export async function poolRoutes(fastify: FastifyInstance) {
 
     return { pools };
   });
+
+  fastify.get("/pools/:id", { onRequest: [authenticate] }, async (request) => {
+    const getPoolsParams = z.object({
+      id: z.string(),
+    });
+
+    const { id } = getPoolsParams.parse(request.params);
+
+    const pool = await prisma.pool.findUnique({
+      where: {
+        id,
+      },
+      include: {
+        _count: {
+          select: {
+            bettors: true,
+          },
+        },
+        bettors: {
+          select: {
+            id: true,
+
+            user: {
+              select: {
+                avatarUrl: true,
+              },
+            },
+          },
+          take: 4,
+        },
+        owner: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
+
+    return { pool };
+  });
 }
