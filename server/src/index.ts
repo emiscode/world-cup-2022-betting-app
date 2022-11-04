@@ -1,5 +1,6 @@
 import * as dotenv from "dotenv";
-import Fastify, { FastifyRequest } from "fastify";
+import Fastify from "fastify";
+import jwt from "@fastify/jwt";
 import cors from "@fastify/cors";
 import { poolRoutes } from "./routes/pool";
 import { userRoutes } from "./routes/user";
@@ -20,6 +21,10 @@ async function bootstrap() {
 
   await fastify.register(cors, {
     origin: true,
+  });
+
+  await fastify.register(jwt, {
+    secret: process.env.JWT_SECRET || "BETCOPA2022",
   });
 
   await fastify.register(poolRoutes);

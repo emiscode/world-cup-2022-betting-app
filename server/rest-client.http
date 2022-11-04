@@ -7,6 +7,11 @@ http://localhost:5000/users/count
 ### Bets Count
 http://localhost:5000/bets/count
 
+### User me
+http://localhost:5000/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRW1pbGlvIFNjb2RlbGVyIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUxtNXd1MmdJNk00LTlNcDgxckluM0syMlNMamMyel9mWlBVTi1VNXphd009czk2LWMiLCJzdWIiOiJjbGEydG02dTcwMDAweTc1bWhmaHJiN3VvIiwiaWF0IjoxNjY3NTg1OTQ1LCJleHAiOjE2Njc2NzIzNDV9.Yg9yIJ2yjNG4mSnzJAgd4wOmmll7AXvlhLwG_FVD-Pk
+
 ### Create Pool
 POST http://localhost:5000/pools HTTP/1.1
 content-type: application/json
