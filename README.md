@@ -24,12 +24,20 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
 - client-mobile
   - npx expo start
 
-### **ERD**
+### **Screenshots Mobile**
 
-<img src="/server/prisma/ERD.svg" alt="ERD" title="Database" width=500>
+<img src="/client-mobile/assets/screenshots/mobile-login.png">
 
-### **Screenshots**
+<img src="/client-mobile/assets/screenshots/mobile-new-pool.png">
+
+<img src="/client-mobile/assets/screenshots/mobile-find-pool.png">
+
+### **Screenshots Web**
 
 <img src="/client-web/public/screenshot-pt.png">
 
 <img src="/client-web/public/screenshot-en.png">
+
+### **ERD**
+
+<img src="/server/prisma/ERD.svg" alt="ERD" title="Database" width=500>
