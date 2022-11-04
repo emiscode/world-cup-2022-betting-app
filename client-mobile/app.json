@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "client-mobile",
-    "slug": "client-mobile",
+    "name": "betcopa2022",
+    "slug": "betcopa2022",
+    "scheme": "betcopa2022",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
