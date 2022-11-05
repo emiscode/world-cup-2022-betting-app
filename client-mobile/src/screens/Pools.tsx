@@ -7,7 +7,6 @@ import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { api } from "../services/api";
 
 import { BettorCard, BettorCardProps } from "../components/BettorCard";
-import { Loading } from "../components/Loading";
 import { EmptyPoolList } from "../components/EmptyPoolList";
 
 export function Pools() {

@@ -66,6 +66,7 @@ export function New() {
           color="black"
           mb={2}
           placeholder="Qual nome do seu bolão"
+          autoCapitalize="characters"
           onChangeText={setTitle}
           value={title}
         />
