@@ -34,7 +34,9 @@ Create a .env file following the .env.example
 
 <img src="/client-mobile/assets/screenshots/mobile-new-pool.png">
 
-<img src="/client-mobile/assets/screenshots/mobile-find-pool.png">
+<img src="/client-mobile/assets/screenshots/mobile-list-pool.png">
+
+<img src="/client-mobile/assets/screenshots/mobile-bet.png">
 
 ### **Screenshots Web**
 
