@@ -39,6 +39,47 @@ export function Bets({ poolId }: Props) {
     }
   }
 
+  async function handleBetConfirm(matchId: string) {
+    try {
+      if (!teamOneScores.trim() || !teamTwoScores.trim()) {
+        return toast.show({
+          title: "Informe o placar do jogo!",
+          placement: "top",
+          bgColor: "red.500",
+        });
+      }
+
+      await api.post(`pools/${poolId}/match/${matchId}/bet`, {
+        teamOneScores: Number(teamOneScores),
+        teamTwoScores: Number(teamTwoScores),
+      });
+
+      toast.show({
+        title: "Palpite enviado com sucesso!",
+        placement: "top",
+        bgColor: "green.500",
+      });
+
+      fetchMatch();
+    } catch (error) {
+      console.log(error);
+
+      if (error.message === "Request failed with status code 409") {
+        return toast.show({
+          title: "Você já deu seu palpite neste jogo do bolão!",
+          placement: "top",
+          bgColor: "red.500",
+        });
+      }
+
+      toast.show({
+        title: "Não foi possível confirmar seu palpite!",
+        placement: "top",
+        bgColor: "red.500",
+      });
+    }
+  }
+
   useEffect(() => {
     fetchMatch();
   }, [poolId]);
@@ -56,7 +97,7 @@ export function Bets({ poolId }: Props) {
           data={item}
           setTeamOneScores={setTeamOneScores}
           setTeamTwoScores={setTeamTwoScores}
-          onBetConfirm={() => {}}
+          onBetConfirm={() => handleBetConfirm(item.id)}
         />
       )}
     />
