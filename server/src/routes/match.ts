@@ -35,8 +35,8 @@ export async function matchRoutes(fastify: FastifyInstance) {
         match: matchList.map((game) => {
           return {
             ...game,
-            guess: game.bets.length > 0 ? game.bets[0] : null,
-            guesses: undefined,
+            bet: game.bets.length > 0 ? game.bets[0] : null,
+            bets: undefined,
           };
         }),
       };

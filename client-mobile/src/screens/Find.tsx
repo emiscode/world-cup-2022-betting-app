@@ -66,7 +66,11 @@ export function Find() {
 
   return (
     <VStack flex={1} bgColor="green.900">
-      <Header title="Buscar por código" showBackButton></Header>
+      <Header
+        title="Buscar por código"
+        showBackButton
+        onShare={() => {}}
+      ></Header>
 
       <VStack mt={12} mx={5} alignItems="center">
         <Heading
