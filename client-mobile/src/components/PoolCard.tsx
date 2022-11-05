@@ -3,7 +3,7 @@ import { Heading, HStack, Text, VStack } from "native-base";
 
 import { Bettors, BettorProps } from "./Bettors";
 
-export interface BettorCardProps {
+export interface PoolCardProps {
   id: string;
   code: string;
   title: string;
@@ -19,10 +19,10 @@ export interface BettorCardProps {
 }
 
 interface Props extends TouchableOpacityProps {
-  data: BettorCardProps;
+  data: PoolCardProps;
 }
 
-export function BettorCard({ data, ...rest }: Props) {
+export function PoolCard({ data, ...rest }: Props) {
   return (
     <TouchableOpacity {...rest}>
       <HStack

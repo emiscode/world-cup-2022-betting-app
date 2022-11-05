@@ -5,13 +5,14 @@ import { Header } from "../components/Header";
 import { Octicons } from "@expo/vector-icons";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { api } from "../services/api";
+import { Loading } from "../components/Loading";
 
-import { BettorCard, BettorCardProps } from "../components/BettorCard";
+import { PoolCard, PoolCardProps } from "../components/PoolCard";
 import { EmptyPoolList } from "../components/EmptyPoolList";
 
 export function Pools() {
   const toast = useToast();
-  const [pools, setPools] = useState<BettorCardProps[]>([]);
+  const [pools, setPools] = useState<PoolCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
 
@@ -41,6 +42,10 @@ export function Pools() {
     }, [])
   );
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <VStack flex={1} bgColor="green.900">
       <Header title="Meus bolões"></Header>
@@ -63,7 +68,12 @@ export function Pools() {
       <FlatList
         data={pools}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <BettorCard data={item} />}
+        renderItem={({ item }) => (
+          <PoolCard
+            data={item}
+            onPress={() => navigation.navigate("details", { id: item.id })}
+          />
+        )}
         px={5}
         showsVerticalScrollIndicator={false}
         _contentContainerStyle={{ pb: 10 }}
