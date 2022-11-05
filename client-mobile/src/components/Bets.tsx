@@ -92,7 +92,7 @@ export function Bets({ poolId, code }: Props) {
 
   return (
     <FlatList
-      data={[]}
+      data={match}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Match
