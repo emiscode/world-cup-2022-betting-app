@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import { Match, MatchProps } from "./Match";
 import { Loading } from "../components/Loading";
 import { api } from "../services/api";
+import { EmptyMyPoolList } from "./EmptyMyPoolList";
 
 interface Props {
   poolId: string;
+  code: string;
 }
 
-export function Bets({ poolId }: Props) {
+export function Bets({ poolId, code }: Props) {
   const toast = useToast();
   const [match, setMatch] = useState<MatchProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -90,7 +92,7 @@ export function Bets({ poolId }: Props) {
 
   return (
     <FlatList
-      data={match}
+      data={[]}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Match
@@ -100,6 +102,7 @@ export function Bets({ poolId }: Props) {
           onBetConfirm={() => handleBetConfirm(item.id)}
         />
       )}
+      ListEmptyComponent={() => <EmptyMyPoolList code={code} />}
     />
   );
 }

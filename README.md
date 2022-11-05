@@ -10,6 +10,10 @@ This project is the result of my participation on the **NLW Copa 2022** event, h
 - client-web
 - client-mobile
 
+### Note
+
+Create a .env file following the .env.example
+
 ### Available commands
 
 - server
