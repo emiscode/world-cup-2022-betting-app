@@ -30,13 +30,13 @@ Create a .env file following the .env.example
 
 ### **Screenshots Mobile**
 
-<img src="/client-mobile/assets/screenshots/mobile-login.png">
+<img src="/client-mobile/assets/screenshots/mobile-login.png" width="200px">
 
-<img src="/client-mobile/assets/screenshots/mobile-new-pool.png">
+<img src="/client-mobile/assets/screenshots/mobile-new-pool.png" width="200px">
 
-<img src="/client-mobile/assets/screenshots/mobile-list-pool.png">
+<img src="/client-mobile/assets/screenshots/mobile-list-pool.png" width="200px">
 
-<img src="/client-mobile/assets/screenshots/mobile-bet.png">
+<img src="/client-mobile/assets/screenshots/mobile-bet.png" width="200px">
 
 ### **Screenshots Web**
 
