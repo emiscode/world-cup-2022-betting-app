@@ -1,14 +1,12 @@
 import { useToast, VStack } from "native-base";
 import { Header } from "../components/Header";
-import {
-  useFocusEffect,
-  useNavigation,
-  useRoute,
-} from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { PoolCardProps } from "../components/PoolCard";
 import { api } from "../services/api";
 import { Loading } from "../components/Loading";
+import { PoolHeader } from "../components/PoolHeader";
+import { EmptyMyPoolList } from "../components/EmptyMyPoolList";
 
 interface RouteParams {
   id: string;
@@ -29,10 +27,6 @@ export function Details() {
       const response = await api.get(`/pools/${id}`);
 
       setPool(response.data.pool);
-
-      console.log(response.data.pool);
-
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
 
@@ -43,6 +37,8 @@ export function Details() {
       });
 
       navigation.navigate("pools");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -56,8 +52,15 @@ export function Details() {
 
   return (
     <VStack flex={1} bgColor="green.900">
-      <Header title={id} showBackButton showShareButton></Header>
-      <VStack></VStack>
+      <Header title={pool.title} showBackButton showShareButton></Header>
+
+      {pool._count?.bettors > 0 ? (
+        <VStack px={5} flex={1}>
+          <PoolHeader data={pool} />
+        </VStack>
+      ) : (
+        <EmptyMyPoolList code={pool.code} />
+      )}
     </VStack>
   );
 }
