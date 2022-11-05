@@ -4,6 +4,9 @@ import { getName } from "country-list";
 
 import { Team } from "./Team";
 
+import dayjs from "dayjs";
+import ptBR from "dayjs/locale/pt-br";
+
 interface BetProps {
   id: string;
   gameId: string;
@@ -15,6 +18,7 @@ interface BetProps {
 
 export interface MatchProps {
   id: string;
+  date: string;
   teamOneCountryCode: string;
   teamTwoCountryCode: string;
   bet: null | BetProps;
@@ -35,6 +39,10 @@ export function Match({
 }: Props) {
   const { colors, sizes } = useTheme();
 
+  const matchDate = dayjs(data.date)
+    .locale(ptBR)
+    .format("DD [de] MMMM [de] YYYY [às] HH:00[h]");
+
   return (
     <VStack
       w="full"
@@ -52,7 +60,7 @@ export function Match({
       </Text>
 
       <Text color="gray.200" fontSize="xs">
-        22 de Novembro de 2022 às 16:00h
+        {matchDate}
       </Text>
 
       <HStack
