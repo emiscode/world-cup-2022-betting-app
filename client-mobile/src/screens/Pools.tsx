@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { VStack, Icon, useToast, FlatList } from "native-base";
 import { Button } from "../components/Button";
 import { Header } from "../components/Header";
 import { Octicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { api } from "../services/api";
 
 import { BettorCard, BettorCardProps } from "../components/BettorCard";
@@ -36,9 +36,11 @@ export function Pools() {
     }
   }
 
-  useEffect(() => {
-    fetchPools();
-  });
+  useFocusEffect(
+    useCallback(() => {
+      fetchPools();
+    }, [])
+  );
 
   return (
     <VStack flex={1} bgColor="green.900">
