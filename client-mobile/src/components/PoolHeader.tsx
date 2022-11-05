@@ -1,7 +1,7 @@
-import { Heading, HStack, Text, VStack } from 'native-base';
+import { Heading, HStack, Text, VStack } from "native-base";
 
-import { PoolPros } from './PoolCard';
-import { Participants } from './Participants';
+import { PoolPros } from "./BettorCard";
+import { Participants } from "./Bettors";
 
 interface Props {
   data: PoolPros;
